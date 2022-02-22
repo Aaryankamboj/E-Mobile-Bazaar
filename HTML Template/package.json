@@ -1,0 +1,20 @@
+{
+  "name": "emobilebazaar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"sass ./sass/style.scss style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aaryankamboj/Mobile-Shop-management-system.git"
+  },
+  "author": "aaryan kamboj",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aaryankamboj/Mobile-Shop-management-system/issues"
+  },
+  "homepage": "https://github.com/Aaryankamboj/Mobile-Shop-management-system#readme"
+}
