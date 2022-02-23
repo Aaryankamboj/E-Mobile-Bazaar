@@ -1,6 +1,6 @@
 <?php
-// Use to fetch product data
-class Product{
+// Use to fetch new Phones Section data
+class newPhonesSection{
 
     public $db=null;
     public function __construct(DBController $db){
@@ -10,7 +10,7 @@ class Product{
     }
 
     // Fetch product data using getData Method
-    public function getData($table='product'){
+    public function getData($table='newphonessection'){
        $result =  $this->db->con->query(query:"SELECT * FROM {$table}");
        $resultArray = array();
 

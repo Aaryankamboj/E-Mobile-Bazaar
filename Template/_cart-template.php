@@ -31,11 +31,11 @@
                                 <!-- Product qty starts here-->
                                   <div class="qty d-flex py-2">
                                       <div class="d-flex font-Rale w-25">
-                                        <button class="qty-up border bg-light" data-id="pro1"> <i class="fas fa-plus"></i></button>
+                                        <button class="qty-up border bg-light" data-id="pro1"> <i class="fas fa-plus px-2"></i></button>
                                         <input type="text" data-id="pro1" class="qty_input border px-2 w-100 bg-light font-Ubuntu" disabled                                            value="1" placeholder="1">
-                                        <button class="qty-down border bg-light" data-id="pro1"> <i class="fas fa-minus"></i>                                        </button>
+                                        <button class="qty-down border bg-light" data-id="pro1"> <i class="fas fa-minus px-2"></i>                                        </button>
                                       </div>
-                                      <button type="submit" class="btn font-RaleWay text-danger px-3 border-right border">Delete</button>
+                                      <button type="submit" class="btn font-RaleWay text-danger px-3 border-end">Delete</button>
                                       <button type="submit" class="btn font-RaleWay text-danger">Save for Later</button>
                                   </div>
                                 <!-- Product qty ends here -->
@@ -76,11 +76,11 @@
                                   <!-- Product qty starts here-->
                                     <div class="qty d-flex py-2">
                                         <div class="d-flex font-Rale w-25">
-                                          <button class="qty-up border bg-light" data-id="pro2"> <i class="fas fa-plus"></i></button>
+                                          <button class="qty-up border bg-light" data-id="pro2"> <i class="fas fa-plus px-2"></i></button>
                                           <input type="text" data-id="pro2" class="qty_input border px-2 w-100 bg-light font-Ubuntu" disabled value="1" placeholder="1">
-                                          <button class="qty-down border bg-light" data-id="pro2"> <i class="fas fa-minus"></i></button>
+                                          <button class="qty-down border bg-light" data-id="pro2"> <i class="fas fa-minus px-2"></i></button>
                                         </div>
-                                        <button type="submit" class="btn font-RaleWay text-danger px-3 border-right border">Delete</button>
+                                        <button type="submit" class="btn font-RaleWay text-danger px-3 border-end">Delete</button>
                                         <button type="submit" class="btn font-RaleWay text-danger">Save for Later</button>
                                     </div>
                                   <!-- Product qty ends here -->
