@@ -1,17 +1,17 @@
 <!-- New Phone Section starts here -->
 <?php
-   $newPhone = $newPh->getData();   
+   $newPhone = $ts->getData();   
 ?>
 <section id="new-phones">
     <div class="container">
         <h4 class="font-size-20 font-Ubuntu">New Phones</h4>
         <hr>
         <div class="owl-carousel owl-theme">
-            <?php foreach($newPhone as $item) {   ?>
+            <?php foreach($newPhone as $item) {?>
             <div class="item py-2 bg-light">
                 <div class="item py-2 " style="width: 200px;">
                     <div class="product font-Rubik">
-                <a href="#"><img src="<?php echo $item['item_image'] ??"./Mobile Phone Images/8.png"; ?>" alt="product1" class="img-fluid"> </a>
+                       <a href="product.php? item_id=<?php echo $item['item_id'];?>"><img src="<?php echo $item['item_image'] ??"./Mobile Phone Images/8.png"; ?>" alt="product1" class="img-fluid"> </a>
                         <div class="text-center">
                             <h6> <?php echo $item['item_name']?? "Unknown";?> </h6>
                             <div class="rating text-warning font-size-12">
