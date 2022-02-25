@@ -2,12 +2,12 @@
 $product_shuffle = $product->getData();
 
 // To add a new button automatically when a new product is added
-// $brand = array_map(function ($pro) {
-//     return $pro['item_brand'];
-// }, $product_shuffle);
-// $unique = array_unique($brand);
+$brand = array_map(function ($pro) {
+    return $pro['item_brand'];
+}, $product_shuffle);
+$unique = array_unique($brand);
 
-// sort($unique);
+sort($unique);
 ?>
 
 <!--Special Price starts here -->
@@ -22,9 +22,7 @@ $product_shuffle = $product->getData();
             <button class="btn" data-filter=".Redmi">Redmi</button>
             <button class="btn" data-filter=".Oppo">Oppo</button>
             <?php
-            // array_map(function($brand){
-            //     printf(format:'<button class="btn" data-filter=".%s">%s</button>',$brand,$brand);
-            // },$unique)
+            
             ?>
         </div>
 
@@ -34,7 +32,7 @@ $product_shuffle = $product->getData();
                 <div class="grid-item border <?php echo $item['item_brand'] ?? "Brand"; ?>  ">
                     <div class="item py-2 " style="width: 200px;">
                         <div class="product font-Rubik">
-                            <a href="product.php?item_id<?php echo $item['item_id']; ?>"><img src="<?php echo $item['item_image'] ?? "./Mobile Phone Images/14.png" ?>" alt="product1" class="img-fluid"> </a>
+                            <a href="product.php?item_id=<?php echo $item['item_id']; ?>"><img src="<?php echo $item['item_image'] ?? "./Mobile Phone Images/14.png" ?>" alt="product1" class="img-fluid"> </a>
                             <div class="text-center">
                                 <h6> <?php echo $item['item_name'] ?? "Unknown"; ?> </h6>
                                 <div class="rating text-warning font-size-12">
@@ -47,7 +45,7 @@ $product_shuffle = $product->getData();
                                 <div class="price py-3">
                                     <span> <b>&#x20B9;</b> <?php echo $item['item_price'] ?? '0'; ?></span>
                                 </div>
-                                <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
+
                             </div>
                         </div>
                     </div>

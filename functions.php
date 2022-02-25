@@ -11,6 +11,8 @@ require('database/TopSale.php');
 // Require newPhoneSection class
 require('database/newPhonesSection.php');
 
+// Require Cart class
+require('database/Cart.php');
 
 
 // DBController object
@@ -21,6 +23,7 @@ $product = new Product($db);
 $ts  = new TopSale($db);
 $newPh = new newPhonesSection($db);
 
-
+// Cart object
+$Cart=new Cart($db);
 
 

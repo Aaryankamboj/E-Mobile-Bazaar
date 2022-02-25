@@ -1,5 +1,12 @@
  <?php
     $product_shuffle=$ts->getData();
+    shuffle($product_shuffle);
+
+    // Request Method Post
+    if($_SERVER['REQUEST_METHOD']=="POST"){
+      // Call method Add to Cart
+      $Cart->addToCart($_POST['user_id'],$_POST['item_id']);
+    }
  ?> 
   
  <!-- Top Sale ALL starts here-->
@@ -25,7 +32,11 @@
                 <div class="price py-3">
                   <span> <b> &#x20B9;</b> <?php echo $item['item_price'] ?? '0';?></span>
                 </div>
-                <button type="submit" class="btn btn-warning font-size-12 font-Rubik">Add to Cart</button>
+                <form method="POST">
+                  <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1';?>">
+                  <input type="hidden" name="user_id" value="<?php echo 1;?>">
+                  <button type="submit" name="top_sale_submit" class="btn btn-warning font-size-12 font-Rubik">Add to Cart</button>
+                </form>
               </div>
             </div>       
           </div>

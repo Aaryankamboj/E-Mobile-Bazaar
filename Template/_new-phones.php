@@ -1,6 +1,7 @@
 <!-- New Phone Section starts here -->
 <?php
    $newPhone = $ts->getData();   
+   shuffle($newPhone);
 ?>
 <section id="new-phones">
     <div class="container">

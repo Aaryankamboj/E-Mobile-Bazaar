@@ -2,7 +2,7 @@
     $item_id = $_GET['item_id'] ?? 1;
     foreach ($ts->getData() as $item) :
         if($item['item_id'] == $item_id) :
-    ?>
+  ?>
      <!-- Product Starts-->
      <section id="product" class="py-3">
          <div class="container">
