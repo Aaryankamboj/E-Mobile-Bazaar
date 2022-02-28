@@ -8,6 +8,13 @@ $brand = array_map(function ($pro) {
 $unique = array_unique($brand);
 
 sort($unique);
+
+// Call method Add to Cart
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    if (isset($_POST['special_price_submit'])) {
+      $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
+    }
+  }
 ?>
 
 <!--Special Price starts here -->
@@ -32,7 +39,7 @@ sort($unique);
                 <div class="grid-item border <?php echo $item['item_brand'] ?? "Brand"; ?>  ">
                     <div class="item py-2 " style="width: 200px;">
                         <div class="product font-Rubik">
-                            <a href="product.php?item_id=<?php echo $item['item_id']; ?>"><img src="<?php echo $item['item_image'] ?? "./Mobile Phone Images/14.png" ?>" alt="product1" class="img-fluid"> </a>
+                            <a href="product.php?item_id=<?php echo $item['item_id']; ?>"><img src="<?php echo $item['item_image'] ?? "./assets/product_images/14.png" ?>" alt="product1" class="img-fluid"> </a>
                             <div class="text-center">
                                 <h6> <?php echo $item['item_name'] ?? "Unknown"; ?> </h6>
                                 <div class="rating text-warning font-size-12">
@@ -45,6 +52,13 @@ sort($unique);
                                 <div class="price py-3">
                                     <span> <b>&#x20B9;</b> <?php echo $item['item_price'] ?? '0'; ?></span>
                                 </div>
+                                <form method="POST">
+                                    <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
+                                    <input type="hidden" name="user_id" value="<?php echo 1; ?>">
+
+                                    
+                                    <button type="submit" name="special_price_submit" class="btn btn-warning form-control font-size-12 font-Rubik" onclick="display_message()" style="width: fit-content;" >Add to Cart</button>
+                                </form>
 
                             </div>
                         </div>

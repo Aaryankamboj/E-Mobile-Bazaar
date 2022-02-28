@@ -75,12 +75,30 @@ let $qty_down= $(".qty .qty-down");
 
 // Click event on qty up button
 $qty_up.click(function(e){
+    // Change Product Price using AJAX call method
     let $input=$(`.qty_input[data-id='${$(this).data("id")}']`);
-    if($input.val()>=1 && $input.val()<=9){
-        $input.val(function(i, oldval){
-            return ++oldval;
-        })
-    }
+    let $price=$(`.product_price[data_id='${$(this).data("id")}]`);
+
+    $.ajax({URL :"Template/ajax.php", typeof:'POST', data:{item_id:$(this).data("id")}, success:function(result){
+        let obj=JSON.parse(result);
+        let item_price =obj[0]['item_price'];
+        if($input.val()>=1 && $input.val()<=9){
+            $input.val(function(i, oldval){
+                return ++oldval;
+            })
+        }
+        // Increase the price of the product
+        $price.text(parseInt(item_price * $input.val()).toFixed(2));
+    }}); // closing ajax request
+
+
+
+    // let $input=$(`.qty_input[data-id='${$(this).data("id")}']`);
+    // if($input.val()>=1 && $input.val()<=9){
+    //     $input.val(function(i, oldval){
+    //         return ++oldval;
+    //     })
+    // }
 });
 
 // Click event on qty down button
@@ -92,7 +110,5 @@ $qty_down.click(function(e){
         })
     }
 });
-
-
 
 });

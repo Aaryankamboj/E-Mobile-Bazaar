@@ -5,11 +5,7 @@ require('database/DBController.php');
 // Require Product class
 require('database/Product.php');
 
-// Require topSale class
-require('database/TopSale.php');
 
-// Require newPhoneSection class
-require('database/newPhonesSection.php');
 
 // Require Cart class
 require('database/Cart.php');
@@ -20,10 +16,11 @@ $db=new DBController();
 
 // Product object
 $product = new Product($db);
-$ts  = new TopSale($db);
-$newPh = new newPhonesSection($db);
+$product_shuffle = $product->getData();
+
 
 // Cart object
 $Cart=new Cart($db);
+// print_r($Cart->);
 
 
