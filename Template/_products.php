@@ -132,8 +132,6 @@
                                      </div>
                                  </div>
                                  <!-- Product Qty Section ends here-->
-
-
                              </div>
 
                          </div>
@@ -183,6 +181,6 @@
              </div>
          </section>
  <?php
-    endif;
+        endif;
     endforeach;
     ?>

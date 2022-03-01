@@ -1,16 +1,17 @@
 <?php
+
 // Require MYSQL Connection
-require('../database/DBController.php');
+
 // Require Product class
 require('../database/Product.php');
-
-// Product object
-$product = new Product($db);
+require('../database/DBController.php');
 $db=new DBController();
 
-
+$product = new Product($db);
 if(isset($_POST['item_id'])){
     $result=$product->getProduct($_POST['item_id']);
     echo json_encode($result);
+
 }
+
 ?>

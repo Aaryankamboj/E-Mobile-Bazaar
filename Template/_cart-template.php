@@ -4,6 +4,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   if (isset($_POST['delete-cart-button'])) {
     $deleterecord = $Cart->deleteCart($_POST['item_id']);
   }
+
+  // Save for later
+  if(isset($_POST['wishlist-submit'])){
+    $Cart->saveForLater($_POST['item_id']);
+  }
 }
 ?>
 <section id="cart" class="py-3 mb-5">
@@ -43,16 +48,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <!-- Product qty starts here-->
                 <div class="qty d-flex py-2">
                   <div class="d-flex font-Rale w-25">
-                    <button class="qty-up border bg-light" data-id="<?php echo $item['item_id'] ?? '0';?>"> <i class="fas fa-plus px-2"></i></button>
-                    <input type="text" data-id="<?php echo $item['item_id'] ?? '0';?>" class="qty_input border px-2 w-100 bg-light font-Ubuntu" disabled value="1" placeholder="1">
-                    <button class="qty-down border bg-light" data-id="<?php echo $item['item_id'] ?? '0';?>"> <i class="fas fa-minus px-2"></i> </button>
+                    <button class="qty-up border bg-light" data-id="<?php echo $item['item_id'] ?? '0'; ?>"> <i class="fas fa-plus px-2"></i></button>
+                    <input type="text" data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty_input border px-2 w-100 bg-light font-Ubuntu" disabled value="1" placeholder="1">
+                    <button class="qty-down border bg-light" data-id="<?php echo $item['item_id'] ?? '0'; ?>"> <i class="fas fa-minus px-2"></i> </button>
                   </div>
                   <form method="post">
                     <input type="hidden" value="<?php echo $item['item_id'] ?? '0'; ?>" name="item_id">
                     <button type="submit" name="delete-cart-button" class="btn font-RaleWay text-danger px-3 border-end">Delete</button>
                   </form>
 
-                  <button type="submit" class="btn font-RaleWay text-danger">Save for Later</button>
+                  <form method="post">
+                    <input type="hidden" value="<?php echo $item['item_id'] ?? '0'; ?>" name="item_id">
+                  <button type="submit" name="wishlist-submit" class="btn font-RaleWay text-danger">Save for Later</button>
+                  </form>
+
 
                 </div>
                 <!-- Product qty ends here -->
