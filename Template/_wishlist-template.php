@@ -1,10 +1,16 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  if (isset($_POST['delete-cart-button'])) {
-    $deleterecord = $Cart->deleteCart($_POST['item_id']);
+  if (isset($_POST['delete-submit-button'])) {
+    $deleterecord = $Cart->deleteWish($_POST['item_id']);
+  }
+  if(isset($_POST['cart-submit-button'])){
+    $Cart->saveForLater($_POST['item_id'], 'cart', 'wishlist');
+
   }
 }
 ?>
+
+
 <section id="cart" class="py-3 mb-5">
     <div class="container-fluid w-100 mx-3">
         <h5 class="font-size-20 mx-3 font-Ubuntu">Wishlist</h5>
@@ -47,7 +53,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                                         <button type="submit" name="delete-submit-button" class="btn font-RaleWay text-danger ml-0 pr-3 border-end">Delete</button>
                                     </form>
 
-                                    <button type="submit" class="btn font-RaleWay text-danger">Add to Cart</button>
+                                    <form method="post">
+                                        <input type="hidden" value="<?php echo $item['item_id'] ?? '0'; ?>" name="item_id">
+                                        <button type="submit" name="cart-submit-button" class="btn font-RaleWay text-danger ml-0 pr-3 ">Add to cart</button>
+                                        
+
+                                    </form>
+
 
                                 </div>
                                 <!-- Product qty ends here -->

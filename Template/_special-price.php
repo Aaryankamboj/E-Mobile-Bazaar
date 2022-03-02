@@ -1,6 +1,6 @@
 <?php
 $product_shuffle = $product->getData();
-
+shuffle($product_shuffle);
 // To add a new button automatically when a new product is added
 $brand = array_map(function ($pro) {
     return $pro['item_brand'];

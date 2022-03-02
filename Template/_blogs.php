@@ -1,4 +1,5 @@
 <!-- Blogs start here -->
+
 <section id="blogs">
     <div class="container py-4">
         <h4 class="font-size-20 font-Ubuntu">Latest Blogs</h4>

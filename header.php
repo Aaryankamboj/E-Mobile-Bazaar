@@ -42,14 +42,14 @@
     <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
       <p class="font-WorkSans font-size-12 text-black-45 m-0">The Modern Communication Plaza, New Delhi 1100049</p>
       <div class="font-WorkSans font-size-14">
-        <a href="#" class="px-4 border-right border-left text-dark">Login</a>
-        <a href="#" class="px-4 border-right text-dark">WishList</a>
+        <a href="#" class="px-4 border-right border-left text-dark text-decoration-none">Login</a>
+        <a href="#" class="px-4 border-right text-dark text-decoration-none">WishList</a>
       </div>
     </div>
 
     <!-- Primary Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark color-second-bg px-4">
-      <a class="navbar-brand font-WorkSans" href="#">E-Mobile Bazaar</a>
+      <a class="navbar-brand font-WorkSans" href="index.php">E-Mobile Bazaar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -57,19 +57,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav m-auto font-WorkSans">
           <li class="nav-item active">
-            <a class="nav-link text-white" href="#">On-Sale</a>
+            <a class="nav-link text-white" href="#top-sale-section">On-Sale</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Category <i class="fas fa-chevron-down"></i> </a>
+            <a class="nav-link" href="#special-price">Categories </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href="#blogs">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Products <i class="fas fa-chevron-down"></i> </a>
+            <a class="nav-link" href="#special-price">Products </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Coming Soon</a>
+            <a class="nav-link" href="#new-phones-section">Coming Soon</a>
           </li>
         </ul>
         <form action="#" class="font-size-14 font-Ubuntu">

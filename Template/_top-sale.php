@@ -10,6 +10,10 @@
     }
   }
   ?>
+
+<div id="top-sale-section">
+
+
  <section id="top-sale">
    <div class="container py-5">
      <h3 class="font-size-20 font-Ubuntu">Top Sale</h3>
@@ -59,6 +63,7 @@
      <!-- Top Sale Carousel -->
    </div>
  </section>
+</div>
 
  <!-- Top Sale ALL starts here-->
 

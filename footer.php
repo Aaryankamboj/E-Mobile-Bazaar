@@ -12,10 +12,12 @@
           Pacific Mall, Shop no 27, Near <br> Cannaught Place metro station, <br> New Delhi, 1100489</p>
       </div>
       <div class="col-lg-4 col-12">
-        <h4 class="font-size-20 font-weight-bold">Newsletter</h4>
+        <h4 class="font-size-20 font-weight-bold">Contact Us</h4>
         <form class="form-row">
           <div class="col">
-            <input type="text" class="form-control" placeholder="Email *">
+            <a href = "mailto:abc@example.com?subject = Feedback&body = Message" class="text-decoration-none" style="cursor: pointer;">
+            <input type="text" class="form-control" placeholder="Email*" style="cursor: pointer;"></a>
+            </a>
           </div>
           <div class="col">
             <button type="submit" class="btn btn-primary mt-2" id="footer-btn">Subscribe</button>

@@ -11,6 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 
 ?>
+<div id="new-phones-section">
+
 <section id="new-phones">
     <div class="container">
         <h4 class="font-size-20 font-Ubuntu">New Phones</h4>
@@ -61,6 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     </div>
 </section>
+</div>
+
 <!-- New Phone Section ends here -->
 
 <script>

@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   if(isset($_POST['wishlist-submit'])){
     $Cart->saveForLater($_POST['item_id']);
   }
+    
 }
 ?>
 <section id="cart" class="py-3 mb-5">
