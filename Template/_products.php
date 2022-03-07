@@ -7,6 +7,7 @@
         }
     }
 
+
     $item_id = $_GET['item_id'] ?? 1;
     foreach ($product->getData() as $item) :
         if ($item['item_id'] == $item_id) :
@@ -21,7 +22,7 @@
                          <img src=" <?php echo $item['item_image'] ?? "./Mobile Phone Images/6.png" ?> " alt="product" class="img-fluid">
                          <div class="form-row pt-4 font-size-16 btn-group d-flex">
                              <div class="col mx-1 flex-wrap">
-                                 <button type="submit" class="btn btn-danger form-control font-Ubuntu">Proceed to Buy</button>
+                                 <button type="submit" name="product-wishlist-submit" class="btn btn-danger form-control font-Ubuntu">Proceed to Buy</button>                                
                              </div>
                              <div class="col mx-1 flex-wrap">
                                  <form method="POST">
@@ -125,9 +126,9 @@
                                  <div class="qty d-flex">
                                      <h6 class="font-Krub">Qty</h6>
                                      <div class="d-flex px-4 font-Rale">
-                                         <button class="qty-up border bg-light px-2" data-id="pro1"> <i class="fas fa-plus"></i></button>
-                                         <input type="text" data-id="pro1" class="qty_input border px-2 w-50 bg-light font-Ubuntu" disabled value="1" placeholder="1">
-                                         <button class="qty-down border bg-light px-2" data-id="pro1"> <i class="fas fa-minus"></i>
+                                         <button class="qty-up border bg-light px-2" data-id="<?php echo $item['item_id'] ?? '0'; ?>"> <i class="fas fa-plus"></i></button>
+                                         <input type="text" data-id="<?php echo $item['item_id'] ?? '0'; ?>" class="qty_input border px-2 w-50 bg-light font-Ubuntu" disabled value="1" placeholder="1">
+                                         <button class="qty-down border bg-light px-2" data-id="<?php echo $item['item_id'] ?? '0'; ?>"> <i class="fas fa-minus"></i>
                                          </button>
                                      </div>
                                  </div>

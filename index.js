@@ -80,7 +80,7 @@ $(document).ready(function () {
         //  Change Product price using AJAX CALL method
         $.ajax({
             url: "Template/ajax.php", type: 'POST', data: { itemid: $(this).data("id") }, success: function (result) {
-                let obj = JSON.parse(result);
+                let obj =$result;
                 let item_price = obj[0]['item_price'];
                 if ($input.val() >= 1 && $input.val() <= 9) {
                     $input.val(function (i, oldval) {

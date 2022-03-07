@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Mobile Bazaar</title>
+  <title>E-Mobile Plaza</title>
   <style>
     *{
       margin: 0;
@@ -42,14 +42,14 @@
     <div class="strip d-flex justify-content-between px-4 py-1 bg-light">
       <p class="font-WorkSans font-size-12 text-black-45 m-0">The Modern Communication Plaza, New Delhi 1100049</p>
       <div class="font-WorkSans font-size-14">
-        <a href="#" class="px-4 border-right border-left text-dark text-decoration-none">Login</a>
         <a href="#" class="px-4 border-right text-dark text-decoration-none">WishList</a>
+        <a href="./login-signup-page/logout.php" class="px-4 border-right border-left text-dark text-decoration-none">Logout</a>
       </div>
     </div>
 
     <!-- Primary Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark color-second-bg px-4">
-      <a class="navbar-brand font-WorkSans" href="index.php">E-Mobile Bazaar</a>
+      <a class="navbar-brand font-WorkSans" href="index.php">E-Mobile Plaza</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

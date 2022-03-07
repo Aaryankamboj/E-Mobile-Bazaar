@@ -82,9 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         endforeach;
         ?>
 
-        <!-- Cart item starts here-->
-
-        <!-- Cart item ends here -->
       </div>
       <!-- Sub total section starts here -->
       <div class="col-sm-4">

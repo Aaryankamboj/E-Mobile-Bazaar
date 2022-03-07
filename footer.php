@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-12">
-        <h4 class="font-size-20 font-weight-bold">E-Mobile Bazaar</h4>
+        <h4 class="font-size-20 font-weight-bold">E-Mobile Plaza</h4>
         <p class="font-size-14 font-Ubuntu text-white-50" style="text-align: left;"> Our Outlet : <br>
           Pacific Mall, Shop no 27, Near <br> Cannaught Place metro station, <br> New Delhi, 1100489</p>
       </div>

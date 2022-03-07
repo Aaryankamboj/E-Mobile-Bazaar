@@ -17,16 +17,17 @@ class Cart
                 // Insert into cart(user_id) values ( )
                 // get table columns
                 $columns = implode(',', array_keys($params));
-                print_r($columns);
+                // print_r($columns);
                 $values = implode(',', array_values($params));
-                print_r($values);
+                // print_r($values);
 
                 // Create SQL Query
                 $query_string = sprintf("INSERT INTO %s(%s) VALUES(%s)", $table, $columns, $values);
 
                 // Execute Query
-                $result = $this->db->con->query($query_string);
-                return $result;
+                $result = $this->db->con->query($query_string);                
+                return $result;               
+
             }
         }
     }
