@@ -67,7 +67,7 @@ $(document).ready(function () {
         }
     });
 
-    // Product Qty sectionss    
+    // Product Qty sections 
     let $qty_up = $(".qty .qty-up");
     let $qty_down = $(".qty .qty-down");
     let $deal_price = $("#deal-price");
@@ -79,9 +79,10 @@ $(document).ready(function () {
         let $price = $(`.product_price[data-id='${$(this).data("id")}']`);
         //  Change Product price using AJAX CALL method
         $.ajax({
-            url: "Template/ajax.php", type: 'POST', data: { itemid: $(this).data("id") }, success: function (result) {
-                let obj =$result;
-                let item_price = obj[0]['item_price'];
+            url: "Template/ajax.php", type: 'POST', data: {item_id: $(this).data("id") }, success: function (result) {
+                let obj =JSON.parse(result);
+ 
+                let item_price = +(obj[0]['item_price']);
                 if ($input.val() >= 1 && $input.val() <= 9) {
                     $input.val(function (i, oldval) {
                         return ++oldval;
@@ -92,7 +93,6 @@ $(document).ready(function () {
                     // Set Subtotal
                     let subtotal = parseInt($deal_price.text()) + parseInt(item_price);
                     $deal_price.text(subtotal.toFixed(2));
-
                 }
         }}); // Closing AJAX Request
 
@@ -101,12 +101,30 @@ $(document).ready(function () {
     // Click event on qty down button
     $qty_down.click(function (e) {
         let $input = $(`.qty_input[data-id='${$(this).data("id")}']`);
-        if ($input.val() > 1 && $input.val() <= 10) {
-            $input.val(function (i, oldval) {
-                return --oldval;
-            })
-        }
+        let $price = $(`.product_price[data-id='${$(this).data("id")}']`);
+        $.ajax({
+            url: "Template/ajax.php", type: 'POST', data: {item_id: $(this).data("id") }, success: function (result) {
+                let obj =JSON.parse(result);
+ 
+                let item_price = +(obj[0]['item_price']);
+                if ($input.val() > 1 && $input.val() <= 10) {
+                    $input.val(function (i, oldval) {
+                        return --oldval;
+                    });                  
+
+                    // Increase the Price of the Product
+                    $price.text(parseInt(item_price * $input.val()).toFixed(2));
+                    // Set Subtotal
+                    let subtotal = parseInt($deal_price.text())- parseInt(item_price);
+                    $deal_price.text(subtotal.toFixed(2));
+                }
+        }}); 
+
+      
     });
+
+   
+
 
 
 

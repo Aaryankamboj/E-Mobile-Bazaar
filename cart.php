@@ -13,6 +13,7 @@ count($product->getData('wishlist')) ? include('Template/_wishlist-template.php'
 
 
 include('Template/_new-phones.php');
+// include('Template/proceed-to-buy.php');
 ?>
 
 

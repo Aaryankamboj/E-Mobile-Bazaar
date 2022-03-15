@@ -43,14 +43,14 @@
                <form method="POST">
                  <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
                  <input type="hidden" name="user_id" value="<?php echo 1; ?>">
-                  <!-- <?php
-                  // if (in_array($item['item_id'], $Cart->getCartId($product->getData(table: 'cart')))) {
-                  //   echo '<button type="submit" disabled class="btn btn-success form-control font-size-12 font-Rubik" onclick="display_message()" style="width: fit-content;">In the Cart</button>';
-                  // } else {
-                  //   echo '<button type="submit" name="top_sale_submit" class="btn btn-warning form-control font-size-12 font-Rubik" onclick="display_message()" style="width: fit-content;">Add to Cart</button>';
-                  // }
-                  ?>   -->
-                  <button type="submit" name="top_sale_submit" class="btn btn-warning form-control font-size-12 font-Rubik" onclick="display_message()" style="width: fit-content;">Add to Cart</button>
+                   <?php
+                  if (in_array($item['item_id'], $Cart->getCartId($product->getData(table: 'cart')) ?? [])) {
+                    echo '<button type="submit" disabled class="btn btn-success form-control font-size-12 font-Rubik" onclick="display_message()" style="width: fit-content;">In the Cart</button>';
+                  } else {
+                    echo '<button type="submit" name="top_sale_submit" class="btn btn-warning form-control font-size-12 font-Rubik" onclick="display_message()" style="width: fit-content;">Add to Cart</button>';
+                  }
+                  ?>   
+                  <!-- <button type="submit" name="top_sale_submit" class="btn btn-warning form-control font-size-12 font-Rubik" onclick="display_message()" style="width: fit-content;">Add to Cart</button> -->
                 </form>
                   
 

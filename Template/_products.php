@@ -6,7 +6,11 @@
             $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
         }
     }
-
+ // Save for later
+ if(isset($_POST['product-save-submit'])){
+    $Cart->saveForLater2($_POST['item_id']);
+  }
+    
 
     $item_id = $_GET['item_id'] ?? 1;
     foreach ($product->getData() as $item) :
@@ -22,13 +26,21 @@
                          <img src=" <?php echo $item['item_image'] ?? "./Mobile Phone Images/6.png" ?> " alt="product" class="img-fluid">
                          <div class="form-row pt-4 font-size-16 btn-group d-flex">
                              <div class="col mx-1 flex-wrap">
-                                 <button type="submit" name="product-wishlist-submit" class="btn btn-danger form-control font-Ubuntu">Proceed to Buy</button>                                
+                                 <button type="submit" name="product-wishlist-submit" class="btn btn-danger form-control font-Ubuntu">Save for Later</button>                                
+                                 
                              </div>
                              <div class="col mx-1 flex-wrap">
                                  <form method="POST">
                                      <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? 1; ?>">
                                      <input type="hidden" name="user_id" value="<?php echo 1; ?>">
-                                     <button type="submit" name="product_page_submit" class="btn btn-warning form-control font-ubuntu" onclick="display_message()">Add to Cart</button>
+                                     <?php
+                                        if (in_array($item['item_id'], $Cart->getCartId($product->getData(table: 'cart')) ?? [])) {
+                                            echo '<button type="submit" disabled class="btn btn-success form-control font-ubuntu" onclick="display_message()">In the Cart</button>';
+                                        } else {
+                                            echo '<button type="submit" name="product_page_submit" class="btn btn-warning form-control  font-ubuntu" onclick="display_message()" >Add to Cart</button>';
+                                        }
+                                        ?>
+                                     <!-- //  <button type="submit" name="product_page_submit" class="btn btn-warning form-control font-ubuntu" onclick="display_message()">Add to Cart</button> -->
                                  </form>
                                  <!-- <button type="submit" class="btn btn-warning form-control font-Ubuntu">Add to Cart</button> -->
                              </div>
@@ -100,7 +112,7 @@
                          <!-- Order Details starts here-->
                          <div id="order-details" class="font-Krub d-flex flex-column text-dark">
                              <small class="font-Krub">Delivery by : Apr 25 - Apr 30</small>
-                             <small class="font-Krub">Sold by <a href="#" class="text-decoration-none font-WorkSans"> &nbsp;E - Mobile Bazaar</a> (4.5
+                             <small class="font-Krub">Sold by <a href="#" class="text-decoration-none font-WorkSans"> &nbsp;E - Mobile Plaza</a> (4.5
                                  out of 5 | 15,404 ratings) </small>
                              <small class="font-Krub"> <i class="fas fa-map-marker-alt color-primary"></i>&nbsp;&nbsp; Delivery to Customer
                                  - 1100489 </small>
@@ -111,7 +123,7 @@
                                  <!-- Color starts here -->
                                  <div class="color my-3">
                                      <div class="d-flex justify-content-between">
-                                         <h6 class="font-Krub">Color:</h6>
+                                         <h6 class="font-Krub">Color</h6>
                                          <div class="bg-dark rounded-circle"> <button class="btn font-size-12 "></button>
                                          </div>
                                          <div class="bg-primary rounded-circle"> <button class="btn font-size-12"></button> </div>
@@ -121,7 +133,7 @@
                                  <!-- !Color ends here-->
 
                              </div>
-                             <div class="col-6">
+                             <div class="col-6 mt-3">
                                  <!-- Product Qty Section starts here-->
                                  <div class="qty d-flex">
                                      <h6 class="font-Krub">Qty</h6>

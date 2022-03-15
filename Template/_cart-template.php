@@ -6,10 +6,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
   }
 
   // Save for later
-  if(isset($_POST['wishlist-submit'])){
+  if (isset($_POST['wishlist-submit'])) {
     $Cart->saveForLater($_POST['item_id']);
   }
-    
 }
 ?>
 <section id="cart" class="py-3 mb-5">
@@ -60,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                   <form method="post">
                     <input type="hidden" value="<?php echo $item['item_id'] ?? '0'; ?>" name="item_id">
-                  <button type="submit" name="wishlist-submit" class="btn font-RaleWay text-danger">Save for Later</button>
+                    <button type="submit" name="wishlist-submit" class="btn font-RaleWay text-danger">Save for Later</button>
                   </form>
 
 
@@ -71,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
               <div class="col-sm-2 text-right">
                 <div class="font-size-20 text-danger font-Krub">
-                  &#x20B9 <span class="product_price" data-id="<?php echo $item['item_id'] ?? '0';?>"><?php echo $item['item_price'] ?? "0"; ?> </span>
+                  &#x20B9 <span class="product_price" data-id="<?php echo $item['item_id'] ?? '0'; ?>"><?php echo $item['item_price'] ?? "0"; ?> </span>
                 </div>
               </div>
             </div>
@@ -88,8 +87,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <div class="sub-total border text-center mt-2 w-75">
           <h6 class="font-size-12 font-Ubuntu text-success py-3"> <i class="fas fa-check"></i> Your Order is eligible for FREE delivery</h6>
           <div class="border-top py-4">
-            <h5 class="font-WorkSans font-size-20">Subtotal(<?php echo isset ($sub_total) ? count($sub_total) : '0'; ?>):&nbsp; <span class="text-danger">&#x20B9;</span> <span class="text-danger" id="deal-price"><?php echo isset($sub_total) ? $Cart->getSum($sub_total) : 0; ?> </span> </h5>
-            <button type="submit" class="btn btn-warning mt-3 font-Ubuntu">Proceed to Buy</button>
+            <h5 class="font-WorkSans font-size-20">Subtotal(<?php echo isset($sub_total) ? count($sub_total) : '0'; ?>):&nbsp; <span class="text-danger">&#x20B9;</span> <span class="text-danger" id="deal-price"><?php echo isset($sub_total) ? $Cart->getSum($sub_total) : 0; ?> </span> </h5>
+            <button type="submit" class="btn btn-warning mt-3 font-Ubuntu"> Proceed to Buy </button>
           </div>
         </div>
 

@@ -45,7 +45,8 @@ class Cart
             $result = $this->insertintoCart($params);
             if ($result) {
                 // Reload Page
-                header("Location: " . $_SERVER['PHP_SELF']);
+                header("Location: " . $_SERVER['REQUEST_URI']);
+
             }
         }
     }
@@ -99,7 +100,7 @@ class Cart
             }
             return $result;
         }
-    }
+    } 
 
     // Delete cart item using cart item_id
     public function deleteWish($item_id = null, $table = 'wishlist')

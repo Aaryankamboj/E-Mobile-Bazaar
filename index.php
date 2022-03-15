@@ -1,10 +1,21 @@
 <!-- // Include header.php file -->
+<?
+include "./login-signup-page/config.php";
+session_start();
+$user_id = $_SESSION['id'];
+
+if (!isset($user_id)) {
+    header("location: ./login-signup-page/index.php");
+};
+
+
+?>
 <?php
 ob_start();
 include('header.php');
 ?>
 
-<!-- Include banner area --> 
+<!-- Include banner area -->
 <?php
 include('Template/_banner-area.php');
 //  #Include banner area -->
